@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class Samed_pom  {
+public class Samed_pom {
     public Samed_pom() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
@@ -53,6 +53,30 @@ public class Samed_pom  {
     public WebElement Indigo;
     @FindBy(css = "[value='default-theme']")
     public WebElement defaultx;
+    @FindBy(xpath = "//*[text()='Assignments'][1]")
+    public WebElement assignments;
+    @FindBy(xpath = "//*[text()='Show All']")
+    public WebElement sort1;
+    @FindBy(xpath = "//*[text()='Published']")
+    public WebElement sort2;
+    @FindBy(xpath = "//*[text()='Semester']")
+    public WebElement sort3;
+    @FindBy(css = "[class*='date'] div div [class*='icon-suffix']")
+    public WebElement sort4;
+    @FindBy(css = "[class*='assignment'] div div span:nth-child(1)")
+    public List<WebElement> assignmentz;
+    @FindBy(xpath = "//*[text()='Search']")
+    public WebElement searchButton;
+    @FindBy(xpath = "//*[text()='11A- Biology']")
+    public WebElement biology;
+    @FindBy(css = "[class*='assignment'] div div span:nth-child(2)")
+    public WebElement classDate;
+    @FindBy(xpath = "//*[text()=' Results Published ']")
+    public WebElement resultPublished;
+    @FindBy(css = "[role='option'][value='all']")
+    public WebElement all;
+    @FindBy(css = "[id*=datepicker] [class='left-side'] button:nth-child(5)")
+    public WebElement thisYearz;
 
     public WebElement getWebElement(int x) {
         switch (x) {
@@ -65,6 +89,14 @@ public class Samed_pom  {
             case 4:
                 return this.DarkPurpleTheme;
 
+        }
+        return null;
+    }
+
+    public WebElement getWebElementx(String a) {
+        switch (a) {
+            case "assignments":
+                return this.assignments;
         }
         return null;
     }
