@@ -46,6 +46,17 @@ public class _15ProfileFeature_ extends ParentPage {
 
 
     }
+    public void x1() {
+        for (int i = 1; i <= 4; i++) {
+            myClick(x.profilePic);
+            myClick(x.settings);
+            myClick(x.theme);
+            myClick(x.getWebElement(i));
+            WaitNano(3);
+            myClick(x.save);
+            verifyContainsText(x.helperT2, "Profile successfully updated");
+        }
+    }
 
 }
 
