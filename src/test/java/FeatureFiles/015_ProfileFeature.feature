@@ -4,6 +4,4 @@ Feature: Profile Feature
     Given Navigate to Ccampuss
     When Login succesfullyy
     Then Click on profile button and head to settings
-    And Change theme color
-    Then Save changes
-    And Check helper texttz
+    And Change theme color save and check helper text

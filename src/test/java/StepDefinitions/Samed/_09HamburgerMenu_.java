@@ -44,6 +44,9 @@ public class _09HamburgerMenu_ extends ParentPage {
         myClick(x.student);
         myClick(x.feeBalance);
         ListContainsString(x.balance,"Installment");
+        ListContainsString(x.balance," 200 $ ");
+        ListContainsString(x.balance,"Payment");
+        ListContainsString(x.balance,"2024");
 
     }
 }

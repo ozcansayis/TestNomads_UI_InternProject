@@ -1,5 +1,6 @@
 package Pages;
 
+import StepDefinitions.Samed.Samed_pom;
 import Utilities.GWD;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -13,6 +14,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class ParentPage {
+    Samed_pom b=new Samed_pom();
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(7));
 
     public void myClick(WebElement element) {
@@ -53,6 +55,17 @@ public class ParentPage {
                 condition = true;
         }
         return condition;
+    }
+    public void x1() {
+        for (int i = 1; i <= 4; i++) {
+            myClick(b.profilePic);
+            myClick(b.settings);
+            myClick(b.theme);
+            myClick(b.getWebElement(i));
+            WaitNano(3);
+            myClick(b.save);
+            verifyContainsText(b.helperT2, "Profile successfully updated");
+        }
     }
 
     public static int RandomGenerator(int max, int min) {

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class Samed_pom extends ParentPage {
+public class Samed_pom  {
     public Samed_pom() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
@@ -35,4 +35,38 @@ public class Samed_pom extends ParentPage {
     public WebElement feeBalance;
     @FindBy(css = "balance[class*='ng']")
     List<WebElement> balance;
+    @FindBy(css = "button[class*='button']:nth-child(4)")
+    public WebElement profilePic;
+    @FindBy(xpath = "//*[text()='Settings']")
+    public WebElement settings;
+    @FindBy(css = "button[color='accent']")
+    public WebElement save;
+    @FindBy(xpath = "//*[text()='Profile successfully updated']")
+    public WebElement helperT2;
+    @FindBy(xpath = "//*[text()='Default Theme']")
+    public WebElement theme;
+    @FindBy(css = "[value='purple-theme']")
+    public WebElement PurpleTheme;
+    @FindBy(css = "[value='dark-purple-theme']")
+    public WebElement DarkPurpleTheme;
+    @FindBy(css = "[value='indigo-theme']")
+    public WebElement Indigo;
+    @FindBy(css = "[value='default-theme']")
+    public WebElement defaultx;
+
+    public WebElement getWebElement(int x) {
+        switch (x) {
+            case 1:
+                return this.defaultx;
+            case 2:
+                return this.PurpleTheme;
+            case 3:
+                return this.Indigo;
+            case 4:
+                return this.DarkPurpleTheme;
+
+        }
+        return null;
+    }
+
 }
