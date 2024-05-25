@@ -54,6 +54,7 @@ public class _15ProfileFeature_ extends ParentPage {
             myClick(x.getWebElement(i));
             WaitNano(3);
             myClick(x.save);
+
             verifyContainsText(x.helperT2, "Profile successfully updated");
         }
     }
