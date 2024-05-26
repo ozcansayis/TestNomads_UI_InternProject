@@ -1,5 +1,6 @@
 package Pages;
 
+import StepDefinitions.Samed.Samed_pom;
 import Utilities.GWD;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -54,6 +55,7 @@ public class ParentPage {
         }
         return condition;
     }
+
 
     public static int RandomGenerator(int max, int min) {
         return (int) (Math.random() * (max - min));
