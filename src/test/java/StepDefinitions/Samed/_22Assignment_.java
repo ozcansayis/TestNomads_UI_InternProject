@@ -5,14 +5,12 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static Pages.sRobot.clickBlank;
 
-public class _22_Assignment extends ParentPage {
+public class _22Assignment_ extends ParentPage {
     Samed_pom sp = new Samed_pom();
 
     @Then("Head to assignments")
@@ -42,6 +40,7 @@ public class _22_Assignment extends ParentPage {
         myClick(sp.thisYearz);
 
         ListContainsString(sp.assignmentz, "Biology");
+
         verifyContainsText(sp.classDate, "2024");
 
 
