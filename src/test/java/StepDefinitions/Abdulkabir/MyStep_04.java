@@ -40,6 +40,5 @@ public class MyStep_04 {
         Assert.assertTrue(hm.Inbox.isDisplayed());
         Assert.assertTrue(hm.Outbox.isDisplayed());
         Assert.assertTrue(hm.Trash.isDisplayed());
-
     }
 }

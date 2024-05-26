@@ -1,5 +1,6 @@
 Feature: Hamburger Menu Function
 
+  Background:
   Scenario: Navigate to the website and login
     Given Navigate to Campus
     When Enter valid username and password and click login button
