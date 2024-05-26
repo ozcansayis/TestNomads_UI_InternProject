@@ -19,7 +19,6 @@ public class _22Assignment_ extends ParentPage {
         WebElement we = sp.getWebElementx(x.get(0));
         myClick(we);
     }
-
     @And("Check sorting functionalities")
     public void checkSortingFunctionalities() {
         ListContainsString(sp.assignmentz, "11-A"); //DEFAULT SEARCH
@@ -35,12 +34,10 @@ public class _22Assignment_ extends ParentPage {
         myClick(sp.sort3);
         myClick(sp.all);
 
-
         myClick(sp.sort4);
         myClick(sp.thisYearz);
 
         ListContainsString(sp.assignmentz, "Biology");
-
         verifyContainsText(sp.classDate, "2024");
 
 
