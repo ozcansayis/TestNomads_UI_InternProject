@@ -47,6 +47,5 @@ public class _09HamburgerMenu_ extends ParentPage {
         ListContainsString(x.balance," 200 $ ");
         ListContainsString(x.balance,"Payment");
         ListContainsString(x.balance,"2024");
-
     }
 }
