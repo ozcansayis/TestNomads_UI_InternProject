@@ -6,12 +6,9 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
-import java.time.Duration;
-
 public class _008_hamburgerMenuFinance_steps extends ParentPage {
 
     Ayse_pom pm = new Ayse_pom();
-    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
 
     @Given("Go to the Campus test website and log in")
     public void goToTheCampusTestWebsiteAndLogIn() {
@@ -23,6 +20,7 @@ public class _008_hamburgerMenuFinance_steps extends ParentPage {
 
     @Then("Go to the My Finance page")
     public void goToTheMyFinancePage() {
+        wait.until(ExpectedConditions.urlContains("user-courses"));
         wait.until(ExpectedConditions.elementToBeClickable(pm.hamburgerMenu));
         myClick(pm.hamburgerMenu);
         myClick(pm.finance);
