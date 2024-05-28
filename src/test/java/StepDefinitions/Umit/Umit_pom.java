@@ -12,25 +12,32 @@ public class Umit_pom extends ParentPage {
         PageFactory.initElements(GWD.getDriver(),this);
     }
 
+
     @FindBy(css = "[caption='NAV.ATTENDANCE.TITLE']")
     public WebElement attendance;
 
-    @FindBy(css = "[class='svg-inline--fa fa-calendar-circle-user fa-fw']")
+    @FindBy(css = "[id='mat-tab-label-0-2']")
     public WebElement attendanceExcuse;
 
-    @FindBy(css = "[class='mat-ripple mat-mdc-button-ripple']")
+    @FindBy(css = "[tooltip='ATTENDANCE_EXCUSE.TITLE.ADD']")
     public WebElement plusIcon;
 
-    @FindBy(css = "[class='mat-mdc-form-field-icon-suffix ng-tns-c1534922977-56 ng-star-inserted']")
+    @FindBy(css = "[aria-label='Open calendar']")
     public WebElement date;
 
-    @FindBy(id = "mat-option-14")
+    @FindBy(css = "[aria-label='May 31, 2024']")
+    public WebElement date31;
+
+    @FindBy(css = "[id='mat-select-4']")
     public WebElement fullDay;
 
-    @FindBy(css = "[class='mat-mdc-form-field-flex ng-tns-c1534922977-52']")
+    @FindBy(css = "[class='mat-mdc-option mdc-list-item mdc-list-item--selected mat-mdc-option-active ng-tns-c1154042729-34 ng-star-inserted']")
+    public WebElement fullDay2;
+
+    @FindBy(css = "[placeholder='Message']")
     public WebElement messageBox;
 
-    @FindBy(css = "[class='mat-ripple mat-mdc-menu-ripple']")
+    @FindBy(css = "[role='menuitem']")
     public WebElement attachFiles;
 
     @FindBy(xpath = "//*[text()='From Local']")
