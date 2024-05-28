@@ -13,14 +13,18 @@ public class Samed_pom {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
+    //login
     @FindBy(css = "input[placeholder='Username']")
     public WebElement username;
     @FindBy(css = "[placeholder='Password']")
     public WebElement password;
     @FindBy(css = "button[aria-label='LOGIN']")
     public WebElement loginButton;
+
+    //login control
     @FindBy(xpath = "//*[contains( text(), 'Welcome' ) ]")
     public WebElement helperT;
+
     @FindBy(css = "[aria-haspopup='menu'] span:nth-child(2)")
     public WebElement hamburgerMenu;
     @FindBy(css = "[role='menuitem']:nth-child(3)")
@@ -77,6 +81,35 @@ public class Samed_pom {
     public WebElement all;
     @FindBy(css = "[id*=datepicker] [class='left-side'] button:nth-child(5)")
     public WebElement thisYearz;
+
+    //23
+    @FindBy(xpath = "//*[text()='Calendar'][1]")
+    public WebElement Calendar;
+    @FindBy(css = "div[role='tab']:nth-child(1)")
+    public WebElement WeeklyCoursePlan;
+    @FindBy(css = "div[role='tab']:nth-child(2)")
+    public WebElement CalendarButton;
+    @FindBy(css = "ms-course-schedule-board div div [class='ng-star-inserted']:nth-child(3)")
+    public List<WebElement> x;
+    @FindBy(css = "button[type='button']:nth-child(4)")
+    public WebElement listButton;
+    @FindBy(css = "ms-course-schedule-board div div [class='ng-star-inserted']:nth-child(3) div:nth-child(4)")
+    public WebElement cancelled;
+    @FindBy(css = "#mat-tab-content-0-0 > div > ms-course-schedule-board > ms-browse > div > div > div:nth-child(2) > div:nth-child(4) > button:nth-child(1) > span.mat-mdc-focus-indicator")
+    public WebElement Previous;
+    @FindBy(css = "#mat-tab-content-0-0 > div > ms-course-schedule-board > ms-browse > div > div > div:nth-child(2) > div:nth-child(4) > button:nth-child(2) > span.mat-mdc-focus-indicator")
+    public WebElement Today;
+    @FindBy(css = "#mat-tab-content-0-0 > div > ms-course-schedule-board > ms-browse > div > div > div:nth-child(2) > div:nth-child(4) > button:nth-child(3) > span.mat-mdc-focus-indicator")
+    public WebElement Next;
+
+    @FindBy(xpath = "//*[contains( text(), 'Monday,' ) ]")
+    public WebElement monday;
+    @FindBy(xpath = "//*[contains( text(), 'Friday,' ) ]")
+    public WebElement friday;
+    @FindBy(xpath = "//*[contains( text(), 'Thursday,' ) ]")
+    public WebElement thursday;
+    @FindBy(css = "ms-course-schedule-board[class*='inserted']")
+    public List<WebElement> classes;
 
     public WebElement getWebElement(int x) {
         switch (x) {
