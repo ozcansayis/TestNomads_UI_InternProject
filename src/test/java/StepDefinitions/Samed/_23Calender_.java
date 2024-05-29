@@ -1,17 +1,18 @@
 package StepDefinitions.Samed;
 
 import Pages.ParentPage;
-import Pages.sRobot;
-import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static Pages.sRobot.clickBlank;
 
 public class _23Calender_ extends ParentPage {
     Samed_pom s = new Samed_pom();
+    List<String> x;
 
     @Then("Click Calendar Button")
     public void clickCalendarButton() {
@@ -64,17 +65,20 @@ public class _23Calender_ extends ParentPage {
 
     @Then("Check the visibility of all the classes that students take")
     public void checkTheVisibilityOfAllTheClassesThatStudentsTake() {
-        ListContainsString(s.classes,"(L1)");
-        ListContainsString(s.classes,"(L2)");
-        ListContainsString(s.classes,"(L3)");
-        ListContainsString(s.classes,"(L4)");
-        ListContainsString(s.classes,"BIOLOGY");
-        ListContainsString(s.classes,"MATHEMATICS");
-        ListContainsString(s.classes,"DUTCH");
-        ListContainsString(s.classes,"GEOMETRY");
-        ListContainsString(s.classes,"SPANISH");
-        ListContainsString(s.classes,"STATISTICS");
-        ListContainsString(s.classes,"CHEMISTRY");
+        x = new ArrayList<>(List.of("BIOLOGY", "CHEMISTRY", "MATHEMATICS", "GEOMETRY", "PHYSICAL", "STATISTICS", "DUTCH", "SPANISH"));
+        List<String> a = new ArrayList<>();
+
+        for (int i = 0; i < 19; i++) {
+            String classq = s.classes.get(i).getText().replace("11A-", "").trim();
+            if (!a.contains(classq)) {
+                a.add(classq);
+            }
+        }
+        x1(a);
+
+        myClick(s.classss);
+        verifyContainsText(s.courseDetail, "Course Meeting - ( 11A- Biology )");
+        myClick(s.exitButton);
     }
 
     @Then("Check Weekly Course Plan and Calendar button")
@@ -87,4 +91,13 @@ public class _23Calender_ extends ParentPage {
         Assert.assertTrue(s.listButton.isEnabled(), "error");
     }
 
+    public void x1(List<String> xz) {
+        for (int i = 0; i < x.size(); i++) {
+            if (!x.contains(xz.get(i))) {
+                Assert.fail();
+            }
+        }
+    }
+
 }
+

@@ -1,6 +1,5 @@
 package StepDefinitions.Samed;
 
-import Pages.ParentPage;
 import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,7 +21,7 @@ public class Samed_pom {
     public WebElement loginButton;
 
     //login control
-    @FindBy(xpath = "//*[contains( text(), 'Welcome' ) ]")
+    @FindBy(xpath = "//*[contains( text(), 'Welcome,' ) ]")
     public WebElement helperT;
 
     @FindBy(css = "[aria-haspopup='menu'] span:nth-child(2)")
@@ -108,9 +107,14 @@ public class Samed_pom {
     public WebElement friday;
     @FindBy(xpath = "//*[contains( text(), 'Thursday,' ) ]")
     public WebElement thursday;
-    @FindBy(css = "ms-course-schedule-board[class*='inserted']")
+    @FindBy(xpath = "//*[contains( text(), '11A-' ) ]")
     public List<WebElement> classes;
-
+    @FindBy(xpath = "//*[text()='11A- BIOLOGY ']")
+    public WebElement classss;
+    @FindBy(css = "course-details-dialog span:nth-child(1)")
+    public WebElement courseDetail;
+@FindBy(css = "course-details-dialog div button:nth-child(2)")
+public WebElement exitButton;
     public WebElement getWebElement(int x) {
         switch (x) {
             case 1:
@@ -121,11 +125,9 @@ public class Samed_pom {
                 return this.Indigo;
             case 4:
                 return this.DarkPurpleTheme;
-
         }
         return null;
     }
-
     public WebElement getWebElementx(String a) {
         switch (a) {
             case "assignments":
@@ -133,5 +135,4 @@ public class Samed_pom {
         }
         return null;
     }
-
 }
