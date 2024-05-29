@@ -49,16 +49,17 @@ public class _013_Steps extends ParentPage {
         js.executeScript("arguments[0].click();", um.attachFiles);
         js.executeScript("arguments[0].click();", um.fromLocal);
 
-        //robot.keyPress(KeyEvent.VK_T);
-        //robot.keyRelease(KeyEvent.VK_T);
-        robot.keyPress(KeyEvent.VK_ALT);
-        robot.keyPress(KeyEvent.VK_DOWN);
-        robot.keyRelease(KeyEvent.VK_ALT);
-        robot.keyRelease(KeyEvent.VK_DOWN);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+        WaitNano(20);
+
+        robot.keyPress(KeyEvent.VK_T);
+        robot.keyRelease(KeyEvent.VK_T);
+
+      // robot.keyPress(KeyEvent.VK_DOWN);
+      // robot.keyRelease(KeyEvent.VK_DOWN);
+      // robot.keyPress(KeyEvent.VK_ENTER);
+      // robot.keyRelease(KeyEvent.VK_ENTER);
+      // robot.keyPress(KeyEvent.VK_ENTER);
+      // robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
 }
