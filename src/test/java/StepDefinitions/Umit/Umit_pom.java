@@ -43,5 +43,24 @@ public class Umit_pom extends ParentPage {
     @FindBy(xpath = "//*[text()='From Local']")
     public WebElement fromLocal;
 
+    @FindBy(css = "[class='avatar-mini ng-star-inserted']")
+    public WebElement avatar;
+
+    @FindBy(css = "[class='svg-inline--fa fa-circle-user fa-fw']")
+    public WebElement settings;
+
+    @FindBy(css = "[class='user-info']")
+    public WebElement picture;
+
+    @FindBy(css = "[class='svg-inline--fa fa-upload fa-fw']")
+    public WebElement uploadPicture;
+
+    @FindBy(xpath = "//*[text()='Save']")
+    public WebElement save;
+
+    @FindBy(xpath = "//*[text()=' Upload ']")
+    public WebElement upload;
+
+
 
 }
