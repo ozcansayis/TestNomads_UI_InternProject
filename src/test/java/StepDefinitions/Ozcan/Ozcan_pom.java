@@ -12,10 +12,10 @@ public class Ozcan_pom extends ParentPage {
     }
 
     // login
-    @FindBy(css = "[placeholder='Username']")
+    @FindBy(css = "[formcontrolname='username']")
     public WebElement username;
 
-    @FindBy(css = "[placeholder='Password']")
+    @FindBy(css = "[formcontrolname='password']")
     public WebElement password;
 
     @FindBy(css = "[aria-label='LOGIN']")
