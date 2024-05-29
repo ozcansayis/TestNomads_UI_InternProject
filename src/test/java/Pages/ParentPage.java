@@ -1,5 +1,6 @@
 package Pages;
 
+import StepDefinitions.Samed.Samed_pom;
 import Utilities.GWD;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -13,7 +14,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class ParentPage {
-    public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(7));
+    public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
 
     public void myClick(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -54,6 +55,7 @@ public class ParentPage {
         }
         return condition;
     }
+
 
     public static int RandomGenerator(int max, int min) {
         return (int) (Math.random() * (max - min));
