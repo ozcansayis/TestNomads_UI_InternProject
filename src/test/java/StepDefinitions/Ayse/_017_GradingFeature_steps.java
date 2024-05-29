@@ -19,7 +19,7 @@ public class _017_GradingFeature_steps {
     String gradingPageWindowID;
 
     @Then("Go to the grading page")
-    public void goToTheGradingPage() throws AWTException {
+    public void goToTheGradingPage() {
         pm.wait.until(ExpectedConditions.urlContains("user-courses"));
         pm.wait.until(ExpectedConditions.elementToBeClickable(pm.grading));
         pm.myClick(pm.grading);
