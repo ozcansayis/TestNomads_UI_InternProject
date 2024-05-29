@@ -61,6 +61,22 @@ public class Umit_pom extends ParentPage {
     @FindBy(xpath = "//*[text()=' Upload ']")
     public WebElement upload;
 
+    @FindBy(css = "[page='GRADING']")
+    public WebElement grading;
+
+    @FindBy(xpath ="//*[text()=' Course Grade ']" )
+    public WebElement courseGrade;
+
+    @FindBy(xpath = "//*[text()=' Student Transcript ']")
+    public WebElement studentTranscript;
+
+    @FindBy(xpath = "//*[text()=' Transcript By Subject ']")
+    public WebElement transcriptBySubject;
+
+
+
+
+
 
 
 }
