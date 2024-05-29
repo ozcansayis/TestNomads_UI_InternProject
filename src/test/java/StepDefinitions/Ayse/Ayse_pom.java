@@ -116,4 +116,19 @@ public class Ayse_pom extends ParentPage {
 
     @FindBy(css = "user-message-list>div[class='ng-star-inserted']>div:nth-child(3)")
     public WebElement message_;
+
+    @FindBy(css = "[caption='NAV.GRADING.TITLE'] button")
+    public WebElement grading;
+
+    @FindBy(css = "div[class='mat-mdc-tab-labels']>div:nth-child(1)")
+    public WebElement courseGrade;
+
+    @FindBy(css = "div[class='mat-mdc-tab-labels']>div:nth-child(2)")
+    public WebElement studentTranscript;
+
+    @FindBy(css = "[id='course-grade-print-button'] button")
+    public WebElement download;
+
+    @FindBy(css = "[icon='print'] button")
+    public WebElement print;
 }

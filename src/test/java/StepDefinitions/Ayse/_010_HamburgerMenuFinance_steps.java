@@ -85,8 +85,8 @@ public class _010_HamburgerMenuFinance_steps extends ParentPage {
         balance_2 = Double.parseDouble(b.substring(0, b.indexOf(" ")).replace(",", ""));
         String t = pm.totalRevenue.getText();
         totalRevenue_2 = Double.parseDouble(t.substring(0, t.indexOf(" ")).replace(",", ""));
-        Assert.assertEquals((balance_1 - 1), balance_2, "");
-        Assert.assertEquals((totalRevenue_1 + 1), totalRevenue_2, "");
+        Assert.assertEquals((balance_1 - 1), balance_2, "Balance value is not updated.");
+        Assert.assertEquals((totalRevenue_1 + 1), totalRevenue_2, "Total Revenue value is not updated.");
     }
 
     @Then("Check the Fee Balance Detail button on the payment page")
