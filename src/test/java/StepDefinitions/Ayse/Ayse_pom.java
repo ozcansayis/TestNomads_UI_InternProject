@@ -126,9 +126,6 @@ public class Ayse_pom extends ParentPage {
     @FindBy(css = "div[class='mat-mdc-tab-labels']>div:nth-child(2)")
     public WebElement studentTranscript;
 
-    @FindBy(css = "div[class='mat-mdc-tab-labels']>div:nth-child(3)")
-    public WebElement transcriptBySubject;
-
     @FindBy(css = "[id='course-grade-print-button'] button")
     public WebElement download;
 
