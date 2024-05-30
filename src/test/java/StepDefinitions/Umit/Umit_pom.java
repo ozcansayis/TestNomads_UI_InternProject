@@ -91,6 +91,9 @@ public class Umit_pom extends ParentPage {
     @FindBy(linkText = "Search")
     public WebElement search;
 
+    @FindBy(xpath = "//*[text()='Profile successfully updated']")
+    public WebElement helperT2;
+
 
 
 
