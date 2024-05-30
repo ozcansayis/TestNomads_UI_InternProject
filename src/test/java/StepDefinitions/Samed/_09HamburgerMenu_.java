@@ -17,7 +17,6 @@ public class _09HamburgerMenu_ extends ParentPage {
         myClick(x.loginButton);
 
     }
-
     @When("Login succesfullyy")
     public void loginSuccesfullyy() {
         verifyContainsText(x.helperT,"Welcome");
