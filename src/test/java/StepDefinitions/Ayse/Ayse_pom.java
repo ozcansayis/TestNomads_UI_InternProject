@@ -131,4 +131,38 @@ public class Ayse_pom extends ParentPage {
 
     @FindBy(css = "[icon='print'] button")
     public WebElement print;
+
+    @FindBy(css = "[page='ASSIGNMENT'] button")
+    public WebElement assignments;
+
+    @FindBy(xpath = "(//div[@fxlayoutalign='space-between center']/div[@fxlayoutalign='end center']//button)[1]")
+    public WebElement assignmentButton;
+
+    @FindBy(xpath = "(//div[@fxlayoutalign='space-between center']/div[@fxlayoutalign='end center']//button)[2]")
+    public WebElement submitButton;
+
+    @FindBy(xpath = "(//div[@fxlayoutalign='space-between center']/div[@fxlayoutalign='end center']//button)[3]")
+    public WebElement markItButton;
+
+    @FindBy(css = "[fxlayoutalign='space-between center']")
+    public WebElement y;
+
+    @FindBy(className = "container")
+    public WebElement assignmentDetails ;
+
+    @FindBy(xpath = "//span[text()=' Assignment ']/../button")
+    public WebElement backButton;
+
+    @FindBy(css = "[role='dialog']")
+    public WebElement submissionAttemptPage;
+
+    @FindBy(css = "[role='dialog'] [icon='file-import'] button")
+    public WebElement submit;
+
+    @FindBy(css = "button[aria-label='Close dialog']")
+    public WebElement closeSubmit;
+
+    @FindBy(css = "[d^='M316.9']")
+    public List<WebElement> markSelected;
+
 }
