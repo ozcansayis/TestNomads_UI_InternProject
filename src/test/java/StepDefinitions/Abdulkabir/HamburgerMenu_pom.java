@@ -58,47 +58,74 @@ public class HamburgerMenu_pom extends ParentPage {
     public WebElement MesageSend;
     @FindBy(css = "//tbody[@role='rowgroup']/tr/td[3]")
     public WebElement SendedSubject;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
- //   @FindBy(css = "")
- //   public WebElement Receivers;
+
+    /////////////////////////////06////////////////////////
+
+    @FindBy(xpath = "((//tbody/tr/td)[6])/div/ms-confirm-button")
+    public WebElement MoveToTrash01;
+    @FindBy(xpath = "//tbody[@class='mdc-data-table__content ng-star-inserted']/tr[2]/td[6]/div/ms-confirm-button")
+    public WebElement MoveToTrash02;
+
+    //tbody[@class='mdc-data-table__content ng-star-inserted']/tr[2]/td[6]/div/ms-confirm-button
+    @FindBy(xpath = "//span[text()=' Yes ']")
+    public WebElement confirmYesButton;
+    @FindBy(css = "[class='mat-expansion-panel-header-description ng-star-inserted']")
+    public WebElement confirmMessage;
+
+    ////////////////////// 07 ///////////////////////
+
+    @FindBy(xpath = "//*[@id=\"ms-table-3\"]/div/cdk-virtual-scroll-viewport/div[1]/table/tbody/tr[1]/td[7]/div[1]/ms-delete-button/button/span[1]")
+    public WebElement TrashDelete1;
+    @FindBy(xpath = "//tbody/tr[2]/td[7]/div/ms-delete-button")
+    public WebElement TrashDelete2;
+    @FindBy(xpath = "//mat-dialog-actions[@class='mat-mdc-dialog-actions mdc-dialog__actions']/div/div/button[1]/span[1]")
+    public WebElement Cancel;
+
+    @FindBy(xpath = "//tbody/tr[1]/td[7]/div/ms-standard-button")
+    public WebElement Restore;
+    @FindBy(xpath = "//mat-dialog-actions[@class='mat-mdc-dialog-actions mdc-dialog__actions']/div/div/button[2]/span[1]")
+    public WebElement TrashDeleteDelete;
+    @FindBy(xpath = "//app-simple-dialog[@class='mat-mdc-dialog-component-host ng-star-inserted']/div/div/div")
+    public WebElement TrashDeleteMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    public WebElement successMessage;
+   // @FindBy(css = "")
+   // public WebElement sfsfs;
+   // @FindBy(css = "")
+   // public WebElement sfsfs;
+   // @FindBy(css = "")
+   // public WebElement sfsfs;
+   // @FindBy(css = "")
+   // public WebElement sfsfs;
+
+    public WebElement getWebElement(String strElement) {
+        switch (strElement) {
+            case "NewMessage":
+                return this.NewMessage;
+            case "passwordInput":
+                return this.password;
+            case "Inbox":
+                return this.Inbox;
+            //     case "Outbox":
+            //         return this.Outbox;
+            case "Trash":
+                return this.Trash;
+            case "confirmButton":
+                //          return this.confirmButton;
+                //      case "MyFinanceButton":
+                //          return this.MyFinanceButton;
+                //      case "viewButton":
+                //          return this.viewButton;
+                //      case "payAmountDue":
+                //          return this.payAmountDue;
+                //      case "payButton":
+                //          return this.payButton;
 
 
+        }
+        return null;
 
+
+    }
 }
