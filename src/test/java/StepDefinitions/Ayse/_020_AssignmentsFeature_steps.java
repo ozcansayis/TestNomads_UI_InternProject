@@ -39,11 +39,12 @@ public class _020_AssignmentsFeature_steps extends ParentPage {
     @And("Click on the mark it icon and check the icon")
     public void clickOnTheMarkItIconAndCheckTheIcon() {
         wait.until(ExpectedConditions.elementToBeClickable(pm.markItButton));
-        myClick(pm.markItButton);
         if (!pm.markSelected.isEmpty()) {
-            Assert.assertTrue(true, "Failed to mark the favourite (Mark it) icon.");
+            myClick(pm.markItButton);
+            Assert.assertTrue(pm.markSelected.isEmpty(), "Failed to uncheck the favourite (Mark it) icon.");
         } else {
-            Assert.assertFalse(false, "Failed to uncheck the favourite (Mark it) icon.");
+            myClick(pm.markItButton);
+            Assert.assertFalse(pm.markSelected.isEmpty(), "Failed to mark the favourite (Mark it) icon.");
         }
     }
 }
