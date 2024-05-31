@@ -9,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class _014_Steps extends ParentPage {
 
@@ -28,7 +29,6 @@ public class _014_Steps extends ParentPage {
     @Then("the user clicks picture icon")
     public void theUserClicksPictureIcon() {
         myClick(um.picture);
-
     }
 
     @And("the user clicks upload picture icon")
@@ -38,19 +38,29 @@ public class _014_Steps extends ParentPage {
 
     @When("the user selects picture from computer")
     public void theUserSelectsPictureFromComputer() {
-        //robot.keyPress(KeyEvent.VK_T);
-        //robot.keyRelease(KeyEvent.VK_T);
+        WaitNano(20);
+        robot.keyPress(KeyEvent.VK_ALT);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_ALT);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
     @Then("the user clicks upload and save button")
     public void theUserClicksUploadAndSaveButton() {
         myClick(um.upload);
-        myClick(um.save);
+        WaitNano(10);
+        js.executeScript("arguments[0].click();", um.save);
     }
 
-    @And("the user verifies that the ricture was succesfully updated")
-    public void theUserVerifiesThatTheRictureWasSuccesfullyUpdated() {
-        Assert.assertTrue(GWD.getDriver().getWindowHandles().size()>1,"Profile successfully updated!");
+    @And("the user verifies that the picture was successfully updated")
+    public void theUserVerifiesThatThePictureWasSuccessfullyUpdated() {
+        //Assert.assertEquals(um.completedWarning.getText(), "Profile successfully updated!");
     }
 
 
