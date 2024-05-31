@@ -31,7 +31,7 @@ public class Umit_pom extends ParentPage {
     @FindBy(css = "[id='mat-select-4']")
     public WebElement fullDay;
 
-    @FindBy(css = "[class='mat-mdc-option mdc-list-item mdc-list-item--selected mat-mdc-option-active ng-tns-c1154042729-34 ng-star-inserted']")
+    @FindBy(xpath = "//*[text()=' Full Day ']")
     public WebElement fullDay2;
 
     @FindBy(css = "[placeholder='Message']")
@@ -93,6 +93,27 @@ public class Umit_pom extends ParentPage {
 
     @FindBy(xpath = "//*[text()='Profile successfully updated']")
     public WebElement helperT2;
+
+    @FindBy(xpath = "//*[text()='Project Geo']")
+    public WebElement geometry;
+
+    @FindBy(css = "[class*='assignment'] div div span:nth-child(1)")
+    public WebElement discuss;
+
+    @FindBy(css = "[formcontrolname='commentText']")
+    public WebElement message;
+
+    @FindBy(xpath = "//*[text()='Send']")
+    public WebElement send;
+
+    @FindBy(css = "[class='ng-untouched ng-pristine ng-valid'] button")
+    public WebElement assignAttach;
+
+    @FindBy(xpath = "//*[text()='Profile successfully completed']")
+    public WebElement completedWarning;
+
+
+
 
 
 

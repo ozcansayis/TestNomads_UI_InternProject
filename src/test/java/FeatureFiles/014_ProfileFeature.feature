@@ -7,4 +7,4 @@ Feature: Profile Feature
     And the user clicks upload picture icon
     When the user selects picture from computer
     Then the user clicks upload and save button
-    And the user verifies that the ricture was succesfully updated
+    And the user verifies that the picture was successfully updated
