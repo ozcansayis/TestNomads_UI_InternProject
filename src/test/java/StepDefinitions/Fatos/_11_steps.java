@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en_old.Ac;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,7 +28,7 @@ public class _11_steps extends ParentPage {
     }
     @When("click  Hamburger Menu > Finance > My Finance link")
     public void clickHamburgerMenuFinanceMyFinanceLink() {
-        myClick(a.hamburgerMenu);
+        myClick(a.hamburgerMenu18);
         myClick(a.finance);
         myClick(a.MyFinance);
         WaitNano(20);
@@ -61,8 +62,6 @@ public class _11_steps extends ParentPage {
         wait.until(ExpectedConditions.visibilityOf(a.ms1));
         wait.until(ExpectedConditions.elementToBeClickable(a.feebalanse));
         myClick(a.feebalanse);
-
-        System.out.println(a.BalanceDetail.size());
     }
 }
 

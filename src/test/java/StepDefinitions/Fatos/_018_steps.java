@@ -31,17 +31,17 @@ public class _018_steps extends ParentPage {
     public void theStudentShouldSeeTheTotalNumberOfAssignedTasks() {
         Actions actions = new Actions(GWD.getDriver());
         WaitNano(30);
-        actions.moveToElement(aa.assignments).perform();
+        actions.moveToElement(aa.assignments18).perform();
         WaitNano(30);
         assignmentCounts = aa.AssignmentCount.getText();
         System.out.println(assignmentCounts);
     }
     @When("The student clicks on the Assignments link")
     public void theStudentClicksOnTheAssignmentsLink() {
-        myClick(aa.assignments);
+        myClick(aa.assignments18);
         WaitNano(20);
         Actions actions = new Actions(GWD.getDriver());
-        actions.moveToElement(aa.assignments).perform();
+        actions.moveToElement(aa.assignments18).perform();
         WaitNano(30);
         System.out.println(aa.AssignmentCount.getText());
     }

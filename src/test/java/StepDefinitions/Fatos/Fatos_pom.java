@@ -19,7 +19,7 @@ public class Fatos_pom extends ParentPage {
     public WebElement password;
     @FindBy(css = "[aria-label='LOGIN']")
     public WebElement loginButton;
-    @FindBy(xpath="//img[@_ngcontent-ng-c2415873216 and contains(@style, 'max-height: 74px;')]")
+    @FindBy(xpath="/html/body/app/student-layout/div/student-toolbar-horizontal/mat-toolbar/div/div[1]/div/div[1]")
     public WebElement logo;
     @FindBy(xpath="/html/body/app/student-layout/div/student-toolbar-horizontal/mat-toolbar/div/div[1]/div/div[2]")
     public WebElement allElement;
@@ -27,24 +27,34 @@ public class Fatos_pom extends ParentPage {
     public WebElement allElement2;
     @FindBy(xpath = "//*[@id='payment-element']/div/iframe")
     public WebElement iframecard;
-    @FindBy(xpath="//span[text()='Courses']")
-    public WebElement courses;
-    @FindBy(xpath="//span[text()='Calendar']")
-    public WebElement calendar;
-    @FindBy(xpath="//span[text()='Attendance']")
-    public WebElement attendance;
+
+    @FindBy(xpath = "//ms-layout-menu-button[contains(@caption, 'COURSE.TITLE.BROWSER')]")
+    public WebElement coursess;
+
+    @FindBy(xpath = "//ms-layout-menu-button[contains(@caption, 'NAV.CALENDAR_EVENT.TITLE')]")
+    public WebElement calendarr;
+
+    @FindBy(xpath = "//ms-layout-menu-button[contains(@caption, 'NAV.ATTENDANCE.TITLE')]")
+    public WebElement atteendancee;
+
+    @FindBy(xpath = "//ms-layout-menu-button[contains(@caption, 'MY_PAGE.TAB_TITLE.ASSIGNMENTS')]")
+    public WebElement assignmentss;
+
+    @FindBy(xpath = "//ms-layout-menu-button[contains(@caption, 'NAV.GRADING.TITLE.BROWSER')]'")
+    public WebElement gradingg;
+
     @FindBy(xpath="/html/body/app/student-layout/div/student-toolbar-horizontal/mat-toolbar/div/div[1]/div/div[2]/div/ms-layout-menu-button[4]/button")
-    public WebElement assignments;
+    public WebElement assignments18;
     @FindBy(xpath="//span[text()='Grading']")
     public WebElement grading;
     @FindBy(css = "[aria-haspopup='menu'] span:nth-child(2)")
-    public WebElement hamburgerMenu;
+    public WebElement hamburgerMenu18;
     @FindBy(xpath= "/html/body/app/student-layout/div/student-toolbar-horizontal/mat-toolbar/div/div[2]/user-chat-bell/button")
     public WebElement Chatmessage;
     @FindBy(css="user-message-bell[class='ng-star-inserted'] button" )
     public WebElement message;
     @FindBy(css = "//a[contains(text(),'Profile')]")
-    public WebElement profile;
+    public WebElement prof;
     @FindBy(css = "[role='menuitem']:nth-child(3)")
     public WebElement finance;
     @FindBy(xpath = "//*[text()='My Finance']")
@@ -92,7 +102,7 @@ public class Fatos_pom extends ParentPage {
     @FindBy(xpath="//*[@id='ms-table-5']/div/cdk-virtual-scroll-viewport/div[1]/table/tbody")
     public List<WebElement> BalanceDetail;
 
-    @FindBy(css="/html/body/app/student-layout/div/student-toolbar-horizontal/mat-toolbar/div/div[2]/user-chat-bell/button")
+    @FindBy(xpath="/html/body/app/student-layout/div/student-toolbar-horizontal/mat-toolbar/div/div[2]/user-chat-bell/button")
     public WebElement ChatMessage;
 
     @FindBy(css="button[aria-label='Close dialog']")
@@ -105,6 +115,6 @@ public class Fatos_pom extends ParentPage {
 
     @FindBy(xpath="/html/body/app/student-layout/div/student-toolbar-horizontal/mat-toolbar/div/div[2]/button/span[2]/div/user-image")
     public WebElement exit;
-    @FindBy(xpath="//*[@id='mat-menu-panel-0']/div/button[5]")
+    @FindBy(xpath="//button[contains(@class, 'mat-mdc-menu-item') and .//span[text()='Sign Out']]")
     public WebElement signOut;
 }
