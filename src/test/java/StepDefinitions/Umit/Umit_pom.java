@@ -76,19 +76,19 @@ public class Umit_pom extends ParentPage {
     @FindBy(xpath = "//*[text()='Assignments'][1]")
     public WebElement assignments;
 
-    @FindBy(xpath = "//*[text()='Published, Results Published']")
+    @FindBy(xpath = "//*[text()='Status']")
     public WebElement published;
 
     @FindBy(xpath = "//*[text()=' Results Published ']")
     public WebElement resultsPublished;
 
-    @FindBy(xpath = "//*[text()=' Semester 1 ']")
+    @FindBy(xpath = "//*[text()='Semester']")
     public WebElement semester1;
 
     @FindBy(xpath = "//*[text()='All ']")
     public WebElement all;
 
-    @FindBy(linkText = "Search")
+    @FindBy(xpath = "//*[text()='Search']")
     public WebElement search;
 
     @FindBy(xpath = "//*[text()='Profile successfully updated']")
@@ -112,6 +112,17 @@ public class Umit_pom extends ParentPage {
     @FindBy(xpath = "//*[text()='Profile successfully completed']")
     public WebElement completedWarning;
 
+    @FindBy(css = "[style='background: inherit;'] ")
+    public WebElement chats;
+
+    @FindBy(xpath = "//*[text()='Student_1 11A']")
+    public WebElement student11;
+
+    @FindBy(css = "[icon='paper-plane']")
+    public WebElement paperPlane;
+
+    @FindBy(css = "[aria-label='Close dialog']")
+    public WebElement closeDialog;
 
 
 

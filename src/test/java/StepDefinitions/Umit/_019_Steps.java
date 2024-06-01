@@ -28,11 +28,12 @@ public class _019_Steps extends ParentPage {
     @Then("the user clicks status and select results published")
     public void theUserClicksStatusAndSelectResultsPublished() {
 
-        //js.executeScript("arguments[0].click();", um.published);
-        WaitNano(10);
-        myClick(um.published);
+        WaitNano(20);
+        js.executeScript("arguments[0].click();", um.published);
 
-        WaitNano(10);
+        //myClick(um.published);
+
+        //WaitNano(10);
         js.executeScript("arguments[0].click();", um.resultsPublished);
         //myClick(um.resultsPublished);
     }
@@ -40,8 +41,9 @@ public class _019_Steps extends ParentPage {
     @And("the user clicks semester and select all")
     public void theUserClicksSemesterAndSelectAll() {
 
-        WaitNano(5);
+        WaitNano(20);
         js.executeScript("arguments[0].click();", um.semester1);
+        WaitNano(20);
         js.executeScript("arguments[0].click();", um.all);
         //myClick(um.semester1);
         //myClick(um.all);
@@ -49,6 +51,37 @@ public class _019_Steps extends ParentPage {
 
     @When("the user clicks search button")
     public void theUserClicksSearchButton() {
-        myClick(um.search);
+        //myClick(um.search);
+        js.executeScript("arguments[0].click();", um.search);
     }
+
+    @Then("the user selects related class and stars discussion")
+    public void theUserSelectsRelatedClassAndStarsDiscussion() {
+        WaitNano(20);
+        js.executeScript("arguments[0].click();", um.geometry);
+        WaitNano(20);
+        js.executeScript("arguments[0].click();", um.discuss);
+    }
+
+    @And("the user adds files and starts conversation")
+    public void theUserAddsFilesAndStartsConversation() {
+        WaitNano(20);
+        js.executeScript("arguments[0].click();", um.chats);
+        WaitNano(20);
+        js.executeScript("arguments[0].click();", um.student11);
+        WaitNano(20);
+        mySendKeys(um.message,"How about my Geo homework? What is your opinion?");
+        WaitNano(20);
+        //js.executeScript("arguments[0].click();", um.paperPlane);
+        myClick(um.paperPlane);
+        myClick(um.closeDialog);
+
+
+
+
+
+
+    }
+
+
 }
