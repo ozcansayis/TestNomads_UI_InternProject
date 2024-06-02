@@ -1,6 +1,5 @@
 package StepDefinitions.Samed;
 
-import Pages.ParentPage;
 import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,14 +12,18 @@ public class Samed_pom {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
+    //login
     @FindBy(css = "input[placeholder='Username']")
     public WebElement username;
     @FindBy(css = "[placeholder='Password']")
     public WebElement password;
     @FindBy(css = "button[aria-label='LOGIN']")
     public WebElement loginButton;
-    @FindBy(xpath = "//*[contains( text(), 'Welcome' ) ]")
+
+    //login control
+    @FindBy(xpath = "//*[contains( text(), 'Welcome,' ) ]")
     public WebElement helperT;
+
     @FindBy(css = "[aria-haspopup='menu'] span:nth-child(2)")
     public WebElement hamburgerMenu;
     @FindBy(css = "[role='menuitem']:nth-child(3)")
@@ -78,6 +81,40 @@ public class Samed_pom {
     @FindBy(css = "[id*=datepicker] [class='left-side'] button:nth-child(5)")
     public WebElement thisYearz;
 
+    //23
+    @FindBy(xpath = "//*[text()='Calendar'][1]")
+    public WebElement Calendar;
+    @FindBy(css = "div[role='tab']:nth-child(1)")
+    public WebElement WeeklyCoursePlan;
+    @FindBy(css = "div[role='tab']:nth-child(2)")
+    public WebElement CalendarButton;
+    @FindBy(css = "ms-course-schedule-board div div [class='ng-star-inserted']:nth-child(3)")
+    public List<WebElement> x;
+    @FindBy(css = "button[type='button']:nth-child(4)")
+    public WebElement listButton;
+    @FindBy(css = "ms-course-schedule-board div div [class='ng-star-inserted']:nth-child(3) div:nth-child(4)")
+    public WebElement cancelled;
+    @FindBy(css = "#mat-tab-content-0-0 > div > ms-course-schedule-board > ms-browse > div > div > div:nth-child(2) > div:nth-child(4) > button:nth-child(1) > span.mat-mdc-focus-indicator")
+    public WebElement Previous;
+    @FindBy(css = "#mat-tab-content-0-0 > div > ms-course-schedule-board > ms-browse > div > div > div:nth-child(2) > div:nth-child(4) > button:nth-child(2) > span.mat-mdc-focus-indicator")
+    public WebElement Today;
+    @FindBy(css = "#mat-tab-content-0-0 > div > ms-course-schedule-board > ms-browse > div > div > div:nth-child(2) > div:nth-child(4) > button:nth-child(3) > span.mat-mdc-focus-indicator")
+    public WebElement Next;
+
+    @FindBy(xpath = "//*[contains( text(), 'Monday,' ) ]")
+    public WebElement monday;
+    @FindBy(xpath = "//*[contains( text(), 'Friday,' ) ]")
+    public WebElement friday;
+    @FindBy(xpath = "//*[contains( text(), 'Thursday,' ) ]")
+    public WebElement thursday;
+    @FindBy(xpath = "//*[contains( text(), '11A-' ) ]")
+    public List<WebElement> classes;
+    @FindBy(xpath = "//*[text()='11A- BIOLOGY ']")
+    public WebElement classss;
+    @FindBy(css = "course-details-dialog span:nth-child(1)")
+    public WebElement courseDetail;
+@FindBy(css = "course-details-dialog div button:nth-child(2)")
+public WebElement exitButton;
     public WebElement getWebElement(int x) {
         switch (x) {
             case 1:
@@ -88,11 +125,9 @@ public class Samed_pom {
                 return this.Indigo;
             case 4:
                 return this.DarkPurpleTheme;
-
         }
         return null;
     }
-
     public WebElement getWebElementx(String a) {
         switch (a) {
             case "assignments":
@@ -100,5 +135,4 @@ public class Samed_pom {
         }
         return null;
     }
-
 }
