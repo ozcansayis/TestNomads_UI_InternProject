@@ -6,36 +6,45 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 public class MyStep_07 extends ParentPage {
     HamburgerMenu_pom hm = new HamburgerMenu_pom();
-    @Given("Click Trash button and See Deleted Messages")
-    public void clickTrashButtonAndSeeDeletedMessages() {
+
+    @Given("Click Trash button and See restore Icon")
+    public void clickTrashButtonAndSeeRestoreIcon() {
+        wait.until(ExpectedConditions.elementToBeClickable(hm.Trash));
         hm.myClick(hm.Trash);
-        hm.TrashDelete1.isDisplayed();
-        hm.TrashDelete2.isDisplayed();
-        WaitNano(3);
-    }
-    @When("Click the Delete button and back button") public void clickTheDeleteButtonAndBackButton() {
-        hm.myClick(hm.TrashDelete1);
-        WaitNano(3);
-        hm.myClick(hm.Cancel);
-        WaitNano(3);}
 
-    @Then("Click the Restore button and see success message")
+        wait.until(ExpectedConditions.elementToBeClickable(hm.restoreIcon));
+        Assert.assertTrue(hm.restoreIcon.isDisplayed());
+        Assert.assertTrue(hm.trashIcon.isDisplayed());
+    }
+
+
+    @When("Click the Restore button and see success message")
     public void clickTheRestoreButtonAndSeeSuccessMessage() {
-        hm.myClick(hm.Restore);
-        WaitNano(3);
-        verifyContainsText(hm.successMessage,"success");
+        hm.myClick(hm.restoreIcon);
+        wait.until(ExpectedConditions.visibilityOf(hm.successMessage));
+        Assert.assertTrue(hm.successMessage.isDisplayed());
+        wait.until(ExpectedConditions.invisibilityOf(hm.successMessage));
     }
 
-    @And("Delete Message Permanent")
-    public void deleteMessagePermanent() {
-        hm.myClick(hm.TrashDelete1);
-        hm.verifyContainsText(hm.successMessage,"want to delete");
-        hm.myClick(hm.TrashDeleteDelete);
-        hm.verifyContainsText(hm.successMessage,"success");
+    @Then("Click on the delete button and see the success message")
+    public void clickOnTheDeleteButtonAndSeeTheSuccessMessage() {
+        wait.until(ExpectedConditions.elementToBeClickable(hm.trashIcon));
+        hm.myJSClick(hm.trashIcon);
+        hm.myClick(hm.delete);
+        wait.until(ExpectedConditions.visibilityOf(hm.successMessage));
+        hm.verifyContainsText(hm.successMessage, "successfully");
+
+
     }
+
 
 }

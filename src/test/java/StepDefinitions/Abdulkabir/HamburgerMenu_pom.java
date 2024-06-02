@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class HamburgerMenu_pom extends ParentPage {
     public HamburgerMenu_pom() {
         PageFactory.initElements(GWD.getDriver(), this);
@@ -26,47 +28,48 @@ public class HamburgerMenu_pom extends ParentPage {
     public WebElement Message;
     @FindBy(xpath = "//span[text()='New Message']")
     public WebElement NewMessage;
-    @FindBy(xpath = "//*[@id=\"mat-menu-panel-5\"]/div/button[2]/span/span")
+    @FindBy(xpath = "//span[text()='Inbox']")
     public WebElement Inbox;
     @FindBy(xpath = "//span[text()='Outbox']")
     public WebElement Outbox;
-    @FindBy(xpath = "//*[@id=\"mat-menu-panel-5\"]/div/button[4]/span/span")
+    @FindBy(xpath = "//*[text()='Trash']")
     public WebElement Trash;
 
-    ///////////////////////////////////////////////05////
-    @FindBy(css = "div[class='ng-star-inserted']>span")
-    public WebElement newMessage02;
-    @FindBy(css = "div[class='mdc-notched-outline__notch']>label>mat-label")
-    public WebElement Receivers;
-    @FindBy(xpath = "//ms-button[@icon='users-medical']/button/span[4]")
-    public WebElement AddReceiver;
-    @FindBy(css = "input[placeholder='Name, Username or E-mail']")
-    public WebElement Name;
-    @FindBy(css = "input[placeholder='Subject']")
-    public WebElement Subject;
-    @FindBy(css = "input[id='mat-mdc-checkbox-57-input']")
-    public WebElement userBox;
-    @FindBy(xpath = "//span[text()='Add']")
-    public WebElement AddButton;
-    @FindBy(xpath = "//div[text()='Users (Fullname, Username or E-mail) was successfully added']")
-    public WebElement AddSM;
-    @FindBy(xpath = "//button[@aria-label='Close dialog']/span[2]")
-    public WebElement AddClose;
-    @FindBy(css = "body[id='tinymce']")
-    public WebElement MetinBox;
-    @FindBy(xpath = "//span[text()='Send']")
-    public WebElement MesageSend;
-    @FindBy(css = "//tbody[@role='rowgroup']/tr/td[3]")
-    public WebElement SendedSubject;
+    ///////////////////////////////////////////////05///////////////
 
+    @FindBy(xpath = "//span[text()='New Message']")
+    public WebElement newMessage;
+
+    @FindBy(css = "ms-button[tooltip$=RECEIVER]")
+    public WebElement addReceiverBtn;
+
+    @FindBy(xpath = "//tbody[@class='mdc-data-table__content ng-star-inserted']/tr[2]/td[4]")
+    public WebElement addreceiverUser;
+    @FindBy(xpath = "//span[text()=\"Add & Close\"]")
+    public WebElement addCloseBtn;
+
+    @FindBy(xpath = "//span[text()=\"Add\"]")
+    public WebElement addBtn;
+
+    @FindBy(css = "input[placeholder=\"Name, Username or E-mail\"]")
+    public WebElement receiverSearch;
+    @FindBy(xpath = "//div[contains(text(), \"successfully added\")]")
+    public WebElement successMsg;
+    @FindBy(css = "ms-text-field[placeholder$=SUBJECT] input")
+    public WebElement subjectBox;
+    @FindBy(css = "ms-button[caption$=SEND]")
+    public WebElement sendButton;
+    @FindBy(css = "iframe[title=\"Rich Text Area\"]")
+    public WebElement richTextAreaFrame;
+    @FindBy(css = "body[id=\"tinymce\"] p")
+    public WebElement richTextArea;
+    @FindBy(xpath = "//div[contains(text(),'Message Successfully sent')]")
+    public WebElement sentMessage;
     /////////////////////////////06////////////////////////
 
     @FindBy(xpath = "((//tbody/tr/td)[6])/div/ms-confirm-button")
     public WebElement MoveToTrash01;
-    @FindBy(xpath = "//tbody[@class='mdc-data-table__content ng-star-inserted']/tr[2]/td[6]/div/ms-confirm-button")
-    public WebElement MoveToTrash02;
 
-    //tbody[@class='mdc-data-table__content ng-star-inserted']/tr[2]/td[6]/div/ms-confirm-button
     @FindBy(xpath = "//span[text()=' Yes ']")
     public WebElement confirmYesButton;
     @FindBy(css = "[class='mat-expansion-panel-header-description ng-star-inserted']")
@@ -74,30 +77,13 @@ public class HamburgerMenu_pom extends ParentPage {
 
     ////////////////////// 07 ///////////////////////
 
-    @FindBy(xpath = "//*[@id=\"ms-table-3\"]/div/cdk-virtual-scroll-viewport/div[1]/table/tbody/tr[1]/td[7]/div[1]/ms-delete-button/button/span[1]")
-    public WebElement TrashDelete1;
-    @FindBy(xpath = "//tbody/tr[2]/td[7]/div/ms-delete-button")
-    public WebElement TrashDelete2;
-    @FindBy(xpath = "//mat-dialog-actions[@class='mat-mdc-dialog-actions mdc-dialog__actions']/div/div/button[1]/span[1]")
-    public WebElement Cancel;
-
-    @FindBy(xpath = "//tbody/tr[1]/td[7]/div/ms-standard-button")
-    public WebElement Restore;
-    @FindBy(xpath = "//mat-dialog-actions[@class='mat-mdc-dialog-actions mdc-dialog__actions']/div/div/button[2]/span[1]")
-    public WebElement TrashDeleteDelete;
-    @FindBy(xpath = "//app-simple-dialog[@class='mat-mdc-dialog-component-host ng-star-inserted']/div/div/div")
-    public WebElement TrashDeleteMessage;
-
+    public WebElement trashIcon;
+    @FindBy(xpath = "//ms-standard-button[@icon='trash-restore']")
+    public WebElement restoreIcon;
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
-   // @FindBy(css = "")
-   // public WebElement sfsfs;
-   // @FindBy(css = "")
-   // public WebElement sfsfs;
-   // @FindBy(css = "")
-   // public WebElement sfsfs;
-   // @FindBy(css = "")
-   // public WebElement sfsfs;
+    @FindBy(xpath = "//*[text()=' Delete ']")
+    public WebElement delete;
 
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
@@ -107,25 +93,12 @@ public class HamburgerMenu_pom extends ParentPage {
                 return this.password;
             case "Inbox":
                 return this.Inbox;
-            //     case "Outbox":
-            //         return this.Outbox;
             case "Trash":
                 return this.Trash;
             case "confirmButton":
-                //          return this.confirmButton;
-                //      case "MyFinanceButton":
-                //          return this.MyFinanceButton;
-                //      case "viewButton":
-                //          return this.viewButton;
-                //      case "payAmountDue":
-                //          return this.payAmountDue;
-                //      case "payButton":
-                //          return this.payButton;
-
 
         }
         return null;
-
 
     }
 }
