@@ -27,6 +27,7 @@ public class ParentPage {
         scrollToElement(element);
         element.clear();
         element.sendKeys(text);
+
     }
 
     public void scrollToElement(WebElement element) {
@@ -60,5 +61,7 @@ public class ParentPage {
     public static int RandomGenerator(int max, int min) {
         return (int) (Math.random() * (max - min));
     }
+
+
 
 }
