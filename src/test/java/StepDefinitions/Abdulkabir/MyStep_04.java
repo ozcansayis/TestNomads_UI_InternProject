@@ -42,3 +42,4 @@ public class MyStep_04 {
         Assert.assertTrue(hm.Trash.isDisplayed());
     }
 }
+

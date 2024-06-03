@@ -25,4 +25,5 @@ public class MyStep_06 extends ParentPage {
         wait.until(ExpectedConditions.visibilityOf(hm.confirmMessage));
         verifyContainsText(hm.confirmMessage, "Message successfully moved to trash!");
     }
+
 }

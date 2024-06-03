@@ -43,7 +43,5 @@ public class MyStep_07 extends ParentPage {
         wait.until(ExpectedConditions.visibilityOf(hm.successMessage));
         hm.verifyContainsText(hm.successMessage, "successfully");
 
-
     }
-
 }
